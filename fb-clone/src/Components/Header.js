@@ -6,6 +6,13 @@ import FlagIcon from '@mui/icons-material/Flag';
 import SubscriptionsOutlinedIcon from '@mui/icons-material/SubscriptionsOutlined';
 import StorefrontOutlinedIcon from '@mui/icons-material/StorefrontOutlined';
 import SupervisedUserCircleRoundedIcon from '@mui/icons-material/SupervisedUserCircleRounded';
+import Avatar from '@mui/material/Avatar';
+import IconButton from '@mui/material/IconButton';
+import { Icon } from '@mui/material';
+import AddIcon from '@mui/icons-material/Add';
+import ForumIcon from '@mui/icons-material/Forum';
+import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 export default function Header() {
   return (
@@ -38,7 +45,24 @@ export default function Header() {
         </div>
       </div>
 
-      <div className='header_right'></div>
+      <div className='header_right'>
+        <div className="header_info">
+          <Avatar />
+          <h4>Ayush Dabas</h4>
+        </div>
+        <IconButton>
+          <AddIcon />
+        </IconButton>
+        <IconButton>
+          <ForumIcon />
+        </IconButton>
+        <IconButton>
+          <NotificationsActiveIcon />
+        </IconButton>
+        <IconButton>
+          <ExpandMoreIcon />
+        </IconButton>
+      </div>
 
     </div>
   )
