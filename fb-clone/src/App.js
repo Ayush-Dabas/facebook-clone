@@ -1,10 +1,18 @@
 import React from 'react'
 import './App.css';
 
+import "./Components/Header.css"
+import Header from "./Components/Header.js"
+
 function App() {
   return (
     <div className="app">
-      <h1>Let us make a clone</h1>
+      {/* Header */}
+      <Header/>
+      {/* App body */}
+      {/* Sidebar */}
+      {/* feed */}
+      {/* widgets */}
     </div>
   );
 }
