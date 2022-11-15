@@ -1,6 +1,11 @@
 import React from 'react'
 import "./Header.css"
 import SearchIcon from "@mui/icons-material/Search"
+import HomeIcon from '@mui/icons-material/Home';
+import FlagIcon from '@mui/icons-material/Flag';
+import SubscriptionsOutlinedIcon from '@mui/icons-material/SubscriptionsOutlined';
+import StorefrontOutlinedIcon from '@mui/icons-material/StorefrontOutlined';
+import SupervisedUserCircleRoundedIcon from '@mui/icons-material/SupervisedUserCircleRounded';
 
 export default function Header() {
   return (
@@ -15,7 +20,23 @@ export default function Header() {
         </div>
       </div>
 
-      <div className='header_middle'></div>
+      <div className='header_middle'>
+        <div className="header_option">
+          <HomeIcon fontSize="large" />
+        </div>
+        <div className="header_option">
+          <FlagIcon fontSize="large" />
+        </div>
+        <div className="header_option">
+          <SubscriptionsOutlinedIcon fontSize="large" />
+        </div>
+        <div className="header_option">
+          <StorefrontOutlinedIcon fontSize="large" />
+        </div>
+        <div className="header_option">
+          <SupervisedUserCircleRoundedIcon fontSize="large" />
+        </div>
+      </div>
 
       <div className='header_right'></div>
 
