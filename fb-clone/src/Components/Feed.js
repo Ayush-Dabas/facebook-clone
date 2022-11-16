@@ -4,7 +4,7 @@ import StoryReel from "./StoryReel.js"
 
 export default function Feed() {
   return (
-    <div className="Feed">
+    <div className="feed">
         {/* StoryReel */}
         <StoryReel />
         {/* MessageSender */}
