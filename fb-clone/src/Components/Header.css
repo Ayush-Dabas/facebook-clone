@@ -62,6 +62,14 @@
     border-bottom: none;
 }
 
+.header_option_active > .MuiSvgIcon-root{
+    color: #2eB1f4;
+}
+
+.header_option_active{
+    border-bottom: 4px solid #2eB1f4;
+}
+
 .header_info{
     display: flex;
     align-items: center;
