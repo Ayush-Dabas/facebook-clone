@@ -1,11 +1,14 @@
 import React from 'react'
 import "./Login.css"
 import Button from '@mui/material/Button';
+import {auth, provider} from "./fireBase.js";
 
 export default function Login() {
 
     const signIn =() =>{
-
+        auth.signInWithPopup(provider).then(result => {
+          console.log(result.user)
+        }).catch(error => alert(error.message));
     };
 
   return (
