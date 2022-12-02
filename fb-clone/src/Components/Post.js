@@ -15,14 +15,14 @@ export default function Post({ profilePic, image, username, timestamp, message})
             <Avatar src={profilePic} className="post_avatar" />
             <div className="post_info">
                 <h3>{username}</h3>
-                <p>Timestamp...</p>
+                <p>{new Date(timestamp?.toDate()).toUTCString()}</p>
             </div>
         </div>
         <div className="post_bottom">
             <p>{message}</p>
         </div>
         <div className="post_image">
-            <img src={image} alt="error" />
+            <img src={image} alt="" />
         </div>
         <div className="post_options">
             <div className="post_option">

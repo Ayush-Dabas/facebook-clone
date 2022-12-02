@@ -2,6 +2,8 @@ import { Avatar } from '@mui/material'
 import React ,{useState} from 'react'
 import "./MessageSender.css"
 import { useStateValue } from '../StateProvider';
+import db from "./fireBase"
+import firebase from 'firebase/compat/app';
 
 import VideocamIcon from '@mui/icons-material/Videocam';
 import PhotoLibraryIcon from '@mui/icons-material/PhotoLibrary';
@@ -17,6 +19,13 @@ export default function MessageSender() {
         e.preventDefault();
 
         // db stuff !!
+        db.collection('posts').add({
+            message: input,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+            profilePic: user.photoURL,
+            username: user.displayName,
+            image: imageUrl,
+        })
 
         setInput("");
         setImageUrl("");
