@@ -2,6 +2,7 @@ import React from 'react'
 import "./Sidebar.css";
 import "./SidebarRow.js"
 import SidebarRow from './SidebarRow.js';
+import { useStateValue } from '../StateProvider';
 
 import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
 import EmojiFlagsIcon from '@mui/icons-material/EmojiFlags';
@@ -12,9 +13,10 @@ import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
 import ExpandMoreOutlinedIcon from '@mui/icons-material/ExpandMoreOutlined';
 
 export default function Sidebar() {
+  const [{user}, dispatch] = useStateValue();
   return (
     <div className="Sidebar">
-        <SidebarRow src = "https://www.newegg.com/insider/wp-content/uploads/windows_xp_bliss-wide.jpg" title = "Mr. Dio" />
+        <SidebarRow src = {user.photoURL} title={user.displayName} />
         <SidebarRow Icon = {LocalHospitalIcon} title = "Covid-19 Information Center" />
         <SidebarRow Icon = {EmojiFlagsIcon}  title = "pages" />
         <SidebarRow Icon = {PeopleIcon}  title = "friends" />

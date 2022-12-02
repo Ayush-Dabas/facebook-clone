@@ -1,12 +1,14 @@
 import { Avatar } from '@mui/material'
 import React ,{useState} from 'react'
 import "./MessageSender.css"
+import { useStateValue } from '../StateProvider';
 
 import VideocamIcon from '@mui/icons-material/Videocam';
 import PhotoLibraryIcon from '@mui/icons-material/PhotoLibrary';
 import TagFacesIcon from '@mui/icons-material/TagFaces';
 
 export default function MessageSender() {
+    const [{user} , dispatch] = useStateValue();
 
     const [input, setInput] = useState("");
     const [imageUrl, setImageUrl] = useState("");
@@ -23,12 +25,12 @@ export default function MessageSender() {
   return (
     <div className='messageSender'>
         <div className="messageSender_top">
-            <Avatar />
+            <Avatar src = {user.photoURL}/>
             <form>
                 <input
                 value={input}
                 onChange={e=>setInput(e.target.value)}
-                className = "messageSender_input" placeholder="What's on your mind" />
+                className = "messageSender_input" placeholder={`What's on your mind , ${user.displayName} ?`} />
                 <input
                 value = {imageUrl}
                 onChange = {e => setImageUrl(e.target.value)}

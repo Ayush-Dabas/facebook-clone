@@ -2,12 +2,21 @@ import React from 'react'
 import "./Login.css"
 import Button from '@mui/material/Button';
 import {auth, provider} from "./fireBase.js";
+import { useStateValue } from '../StateProvider';
+import { actionTypes } from "./Reducer";
+// import { useStateValue } from '../StateProvider';
 
 export default function Login() {
 
+    const [state, dispatch] = useStateValue();
+
     const signIn =() =>{
         auth.signInWithPopup(provider).then(result => {
-          console.log(result.user)
+          dispatch({
+            type: actionTypes.SET_USER,
+            user: result.user,
+          });
+          // console.log(result.user)
         }).catch(error => alert(error.message));
     };
 
