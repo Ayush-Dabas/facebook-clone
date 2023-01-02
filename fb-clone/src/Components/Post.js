@@ -9,6 +9,10 @@ import ExpandMoreOutlinedIcon from '@mui/icons-material/ExpandMoreOutlined';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 export default function Post({ profilePic, image, username, timestamp, message}) {
+    function hideImg() {
+        document.getElementsByID("imageSRC")
+                          .style.display = "none";
+       }
   return (
     <div className = "post">
         <div className="post_top">
@@ -22,7 +26,7 @@ export default function Post({ profilePic, image, username, timestamp, message})
             <p>{message}</p>
         </div>
         <div className="post_image">
-            <img src={image} alt="" />
+            <img id="imageSRC" src={image} onError="hideImg()" />
         </div>
         <div className="post_options">
             <div className="post_option">
